@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- LOADER -->
+<div class="loader-bg loader-bg--login">
+    <div class="progress-new rounder">
+        <div class="progress-circle-indeterminate progress-circle-complete"></div>
+    </div>
+</div>
+<!-- // LOADER -->
+
+<!-- START PAGE-CONTAINER -->
+<div class="login-wrapper ">
+    <!-- START Login Background Pic Wrapper-->
+    <div class="bg-pic">
+        <!-- START Background Pic-->
+        <img src="{{core_path}}/auth/assets/img/r01_wbc_default.jpg"
+             data-src="{{core_path}}/auth/assets/img/r01_wbc_default.jpg"
+             data-src-retina="{{core_path}}/auth/assets/img/r01_wbc_default.jpg" alt="" class="lazy">
+        <!-- END Background Pic-->
+        <!-- START Background Caption-->
+        <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
+            <h2 class="semi-bold text-white">
+                 wbc.fomazov.name</h2>
+            <p class="small">
+                {{env}} {{version}} | {{buildDate}}
+            </p>
+        </div>
+        <!-- END Background Caption-->
+    </div>
+    <!-- END Login Background Pic Wrapper-->
+    <!-- START Login Right Container-->
+    <div class="login-container bg-white">
+        <div class="">
+            <h1 class="pull-left">
+                <a class="brand-text" href="/">
+                    <span class="brand-text--bg">WBC</span>
+                    <span class="brand-text--postfix">demo</span>
+                </a>
+            </h1>
+
+            <div class="clearfix"></div>
+
+            <!-- START Login Form -->
+
+            {% if errmsg %}
+            <span class="label label-important">{{errmsg}}</span>
+            {% endif %}
+
+            <form id="form-login" class="p-t-15" role="form" method="post" action="/login">
+                <p class="col-md-12 col-xs-12 lined"><span>Sign into your account</span></p>
+                <!-- START Form Control-->
+                <div class="form-group form-group-default ">
+                    <label>Login</label>
+
+                    <input type="text" name="username" placeholder="User Name" class="form-control" required
+                        data-msg-required="Enter login">
+
+                </div>
+                <!-- END Form Control-->
+                <!-- START Form Control-->
+                <div class="form-group form-group-default ">
+                    <label>Password</label>
+
+                    <input type="password" class="form-control" name="password" placeholder="Credentials" required
+                        data-msg-required="Enter password">
+                </div>
+                <!-- START Form Control-->
+                <div class="row btn-login-extra">
+                    <div class="col-md-12 text-right">
+                        <a href="/password-reset" class="btn btn-forgot">Forgot password?</a>
+                    </div>
+                </div>
+                <!-- END Form Control-->
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary btn-cons m-t-10" type="submit">Sign in</button>
+                    </div>
+                </div>
+
+                <div class="row m-t-40">
+                    <p class="col-md-12 col-xs-12 lined">
+                        <span>Registration</span>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <a href="/register" class="btn btn-complete block m-t-10">Register account</a>
+                    </div>
+                </div>
+
+            </form>
+            <!--END Login Form-->
+        </div>
+    </div>
+    <!-- END Login Right Container-->
+</div>
+<!-- END PAGE CONTAINER -->
+{% endblock content %}

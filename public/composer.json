@@ -1,0 +1,11 @@
+{
+    "require": {
+        "jasny/sso": "^0.1.8",
+        "slim/slim": "~2.0",
+        "slim/extras": "^2.0",
+        "aura/session": "*",
+        "rmccue/requests": "^1.6",
+        "twig/twig": "^1.23",
+        "twig/extensions": "^1.3"
+    }
+}

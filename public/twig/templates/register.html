@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- LOADER -->
+<div class="loader-bg">
+    <div class="progress-new rounder">
+        <div class="progress-circle-indeterminate progress-circle-complete"></div>
+    </div>
+</div>
+<!-- // LOADER -->
+
+{% if okmsg %}
+<div class="register-container full-height">
+    <div class="container-sm-height full-height">
+        <div class="row row-sm-height">
+            <div class="col-sm-12 col-sm-height col-middle">
+                <div class="row body-bg">
+                    <div class="col-md-12 text-center m-b-10">
+                        <a class="brand-text" href="./login">
+                            <span class="brand-text--bg">WBC</span>
+                            <span class="brand-text--postfix">demo</span>
+                        </a>
+                    </div>
+                    <h5 role="alert"><strong>{{okmsg}}</strong></h5>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-right m-t-10">
+                            <a href="/register" class="btn">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+
+<div class="register-container full-height ">
+    <div class="container-sm-height full-height">
+        <div class="row row-sm-height">
+            <div class="col-sm-12 col-sm-height col-middle">
+
+                {% if errmsg %}
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        {% for err in errmsg %}
+                        <li>{{ err }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+               <div class="row body-bg">
+
+                  <div class="col-md-12 text-center m-b-10">
+                      <a class="brand-text" href="./login">
+                          <span class="brand-text--bg">WBC</span>
+                          <span class="brand-text--postfix">demo</span>
+                      </a>
+
+
+                   </div>
+
+
+                   <form id="form-register" class="p-t-15" role="form" method="post" action="/register">
+
+                    <div class="row m-t-40">
+                        <div class="col-sm-12">
+                            <p class="lined __reg m-b-20">
+                                <span>Registration with your email address</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                       <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group form-group-default required">
+                                <label>First Name</label>
+                                <input type="text" name="first_name" placeholder="John" value="{{formdata.first_name}}" class="form-control" required
+                                    data-msg-required="First name is required">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-group-default required">
+                                <label>Last name</label>
+                                <input type="text" name="last_name" placeholder="Smith" value="{{formdata.last_name}}" class="form-control" required
+                                    data-msg-required="Last name is required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default required">
+                                <label>Email</label>
+                                <input type="email" name="email" placeholder="We will send the logging details to you" value="{{formdata.email}}"
+                                       class="form-control" required
+                                        data-msg-required="Enter Email address"
+                                        data-msg-email="Invalid Email address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-group-default required">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Minimum 4 characters required" value=""
+                                       class="form-control" required
+                                        data-msg-required="Enter password">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- START Form Control-->
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 m-t-10">
+                            <button class="btn btn-primary btn-cons " type="submit">Create a new account</button>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-right m-t-10">
+                            <a href="/login" class="btn btn-inversed">Cancel</a>
+                        </div>
+                    </div>
+                    <!-- END Form Control-->
+
+                   </form>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+<div class="register-layer"></div>
+<!-- END OVERLAY -->
+{% endblock content %}

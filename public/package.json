@@ -1,0 +1,47 @@
+{
+  "protocol": "https",
+  "name": "wbc-client",
+  "description": "WBC client component",
+  "license": "ISC",
+  "build_date": "24.08.2020",
+  "pathes": {
+    "core": "/wbc_modules",
+    "vendor": "/vendor",
+    "broker": "/broker",
+    "bower": "/bower_components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:fomazov/wbc-client.git"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bump": "^0.3.1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-text-replace": "^0.4.0",
+    "matchdep": "^0.3.0",
+    "moment": "^2.11.2",
+    "shelljs": "0.7.6",
+    "semver-compare": "1.0.0"
+  },
+  "peerDependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "envData": {
+    "docker": {
+      "host": "api-wbc.fomazov.name",
+      "api_url": "api-wbc.fomazov.name",
+      "base_url": "wbc.fomazov.name",
+      "login_url": "wbc.fomazov.name"
+    }
+  },
+  "dependencies": {
+    "grunt-cli": "^1.3.2"
+  }
+}

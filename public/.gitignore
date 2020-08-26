@@ -1,0 +1,13 @@
+.idea
+.gitkeep
+version.json
+parameters.js
+
+composer.lock
+
+/node_modules
+/vendor
+/cache
+/twig/cache
+
+*.log

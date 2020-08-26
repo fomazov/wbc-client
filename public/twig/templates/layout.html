@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <title>WBC DEMO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="./../wbc_modules/auth/assets/img/icon/favicon.png">
+    <link rel="apple-touch-icon" href="../../wbc_modules/auth/assets/img/icon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../wbc_modules/auth/assets/img/icon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../wbc_modules/auth/assets/img/icon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../wbc_modules/auth/assets/img/icon/apple-touch-icon-152x152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- BEGIN Vendor CSS-->
+    <link rel="stylesheet" href="{{core_path}}/auth/assets/css/plugins.min.css?v={{ version }}">
+    <link rel="stylesheet" href="{{core_path}}/auth/assets/css/core_base.min.css?v={{ version }}">
+
+</head>
+
+<body class="index-page">
+
+
+{% block content %} {% endblock %}
+<!-- BEGIN VENDOR JS -->
+<script src="{{core_path}}/auth/assets/js/plugins/pace/pace.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery/jquery-1.11.1.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/modernizr.custom.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery-ui/jquery-ui.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/boostrapv3/js/bootstrap.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery/jquery-easy.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery-unveil/jquery.unveil.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery-bez/jquery.bez.min.js?v={{ version }}"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery-actual/jquery.actual.min.js?v={{ version }}"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery-scrollbar/jquery.scrollbar.min.js?v={{ version }}"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/bootstrap-select2/select2.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/classie/classie.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/switchery/switchery.min.js?v={{ version }}" type="text/javascript"></script>
+<script src="{{core_path}}/auth/assets/js/plugins/jquery-validation/jquery.validate.min.js?v={{ version }}" type="text/javascript"></script>
+<!-- END VENDOR JS -->
+<!-- BEGIN CORE TEMPLATE JS -->
+{% block core_template_js %} {% endblock %}
+{% block core_template_css %} {% endblock %}
+<!-- END CORE TEMPLATE JS -->
+<script>
+    (function(global, dc){
+        'use strict';
+
+        global.javascript_errors = [];
+
+        var getErrorElm = function () {
+            var error = dc.createElement('script');
+            error.setAttribute('id'  , 'javascript_errors');
+            error.setAttribute('type', 'text/json');
+            error.style.display = "none";
+            dc.body.appendChild(error);
+
+            getErrorElm = function() {
+                return error;
+            };
+
+            return getErrorElm();
+        };
+
+        global.onerror = function(errorMsg, url, lineNumber) {
+            var errorInfo = {errorMsg: errorMsg, url: url, lineNumber: lineNumber, arg: [].slice.call(arguments)};
+            global.javascript_errors.push(errorInfo);
+
+            getErrorElm().innerHTML = JSON.stringify(global.javascript_errors);
+        };
+    })(window, document);
+
+    $(function() {
+        $('#form-login, #form-register').validate();
+    });
+
+</script>
+</body>
+</html>

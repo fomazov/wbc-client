@@ -1,1 +1,0 @@
-WBC Client browser app demo
